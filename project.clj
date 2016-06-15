@@ -19,6 +19,8 @@
                  [lein-typed "0.3.5"]
                  [lein-ring "0.9.7"]
                  [mistakes-were-made "1.6.3"]
+                 [net.cgrand/parsley "0.9.3"
+                  :exclusions [org.clojure/clojure]]
                  [net.java.balloontip/balloontip "1.2.4.1"]
                  [org.clojure/clojure "1.8.0"]
                  [org.clojure/core.incubator "0.1.3"]
@@ -28,6 +30,9 @@
                   :exclusions [org.apache.httpcomponents/httpclient]]
                  [org.flatland/ordered "1.5.3"]
                  [play-clj/lein-template "1.1.0.1"]
+                 [org.lpetit/paredit.clj "0.19.3"
+                  :exclusions [net.cgrand/parsley
+                               org.clojure/clojure]]
                  [seesaw "1.4.5"]
                  [cross-parinfer "1.1.6"]]
   :uberjar-exclusions [#"PHPTokenMaker\.class"

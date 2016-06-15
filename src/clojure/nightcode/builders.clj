@@ -55,8 +55,10 @@
 
 (defn eval!
   [console]
-  (some->> (editors/get-editor-selected-text)
-           sanitize-code
+  (some->> (or (editors/get-editor-selected-text)
+               (editors/get-tle-under-caret))
+           utils/string->form
+           pr-str
            (.enterLine console)))
 
 ; toggling functions
