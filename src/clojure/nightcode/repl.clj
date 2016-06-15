@@ -12,7 +12,7 @@
   [console]
   (let [run! (fn [& _]
                (.setText (.getTextArea console) "")
-               (lein/start-thread! (ui/get-io! console) (clojure.main/repl))
+               (lein/start-thread! (ui/get-io! console) (clojure.main/repl :init #(require '[clojure.repl :refer [doc]])))
                (s/request-focus! (-> console .getViewport .getView)))
         pane (s/config! console :id :repl-console)]
     (utils/set-accessible-name! (.getTextArea pane) :repl-console)
